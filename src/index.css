@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 95% 60%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 85% 55%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 6%) 0%, hsl(0, 0%, 12%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45, 95%, 50%) 0%, hsl(35, 90%, 55%) 100%);
+    --gradient-radial: radial-gradient(circle at center, hsl(0, 85%, 55%) 0%, hsl(0, 85%, 35%) 100%);
+    --glow-primary: 0 0 30px hsla(0, 85%, 55%, 0.5);
+    --glow-gold: 0 0 30px hsla(45, 95%, 60%, 0.4);
+    --glow-intense: 0 0 60px hsla(0, 85%, 55%, 0.8), 0 0 100px hsla(0, 85%, 55%, 0.4);
+    
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-[var(--glow-primary)] hover:scale-105;
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-foreground text-foreground px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-primary hover:border-primary hover:shadow-[var(--glow-primary)] hover:scale-105;
+  }
+
+  .nav-link {
+    @apply text-foreground font-medium transition-colors duration-300 hover:text-primary relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .menu-card {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .feature-card {
+    @apply bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 transition-all duration-500 hover:scale-105 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.3)];
+  }
+
+  .stat-card {
+    @apply text-center space-y-2 p-6 rounded-xl bg-secondary/50 backdrop-blur-sm border border-border/30 transition-all duration-300 hover:border-primary/50 hover:scale-110;
+  }
+}
