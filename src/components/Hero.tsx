@@ -1,21 +1,19 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import heroBg from '@/assets/bg-hero.png';
-
+import './hero.css'
 
 const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
-    >
+ <section
+  id="home"
+  className="relative min-h-screen flex items-center justify-center overflow-hidden"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
+  }}
+>
+
       <div className="container mx-auto px-4 text-center animate-fade-in">
         {/* Large Logo */}
         <div className="mb-8 flex justify-center relative">

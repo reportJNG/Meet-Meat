@@ -1,0 +1,21 @@
+/* Hero Section - Show full image on all devices */
+#home {
+  background-size: contain !important; /* Changed from 'cover' to 'contain' */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #000; /* Add background color for empty spaces */
+}
+
+/* For mobile devices - ensure full image is visible */
+@media (max-width: 768px) {
+  #home {
+    background-size: contain !important; /* This shows the entire image */
+  }
+}
+
+/* For desktop - you can keep cover if you want */
+@media (min-width: 769px) {
+  #home {
+    background-size: cover !important; /* This fills the screen but may crop */
+  }
+}
