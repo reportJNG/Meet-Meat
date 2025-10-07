@@ -44,7 +44,7 @@ const Header = () => {
               {t('menu')}
             </button>
             <button 
-              onClick={() => scrollToSection('reservation')} 
+              onClick={() => scrollToSection('contact')} 
               className="nav-link text-xs sm:text-sm lg:text-base font-medium text-foreground hover:text-primary transition-all duration-300 hover:scale-105 px-2 py-1 sm:px-0 sm:py-0"
             >
               {t('reservation')}
