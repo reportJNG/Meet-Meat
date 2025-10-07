@@ -9,7 +9,7 @@
 /* For mobile devices - ensure full image is visible */
 @media (max-width: 768px) {
   #home {
-    background-size: contain !important; /* This shows the entire image */
+    background-size:contain !important; /* This shows the entire image */
   }
 }
 

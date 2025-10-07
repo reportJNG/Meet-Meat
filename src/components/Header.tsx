@@ -36,12 +36,7 @@ const Header = () => {
         {/* Centered Navigation - Full width on mobile, centered on larger screens */}
         <nav className="w-full sm:w-3/5 flex justify-center sm:justify-center">
           <div className="flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 flex-wrap justify-center">
-            <button 
-              onClick={() => scrollToSection('home')} 
-              className="nav-link text-xs sm:text-sm lg:text-base font-medium text-foreground hover:text-primary transition-all duration-300 hover:scale-105 px-2 py-1 sm:px-0 sm:py-0"
-            >
-              {t('home')}
-            </button>
+           
             <button 
               onClick={() => scrollToSection('menu')} 
               className="nav-link text-xs sm:text-sm lg:text-base font-medium text-foreground hover:text-primary transition-all duration-300 hover:scale-105 px-2 py-1 sm:px-0 sm:py-0"
